@@ -1,0 +1,41 @@
+<div class="dialog-container">
+  <h2 class="dialog-title">{{ data.title }}</h2>
+  <form class="dialog-form">
+    <mat-form-field class="dialog-form-field" *ngIf="false">
+        <input matInput placeholder="ID" [(ngModel)]="data.warehouse.id" name="id">
+    </mat-form-field>
+    <mat-form-field class="dialog-form-field">
+      <input matInput placeholder="Almacen" [(ngModel)]="data.warehouse.uuid" name="uuid" [readonly]="data.mode !== 'crear'">
+    </mat-form-field>
+    <mat-form-field class="dialog-form-field">
+      <input matInput placeholder="Cliente" [(ngModel)]="data.warehouse.client" name="client" [readonly]="data.mode === 'ver'">
+    </mat-form-field>
+    <mat-form-field class="dialog-form-field">
+      <input matInput placeholder="Tipo" [(ngModel)]="data.warehouse.family" name="family" [readonly]="data.mode === 'ver'">
+    </mat-form-field>
+    <mat-form-field class="dialog-form-field">
+      <input matInput placeholder="Tamaño" [(ngModel)]="data.warehouse.size" name="size" [readonly]="data.mode === 'ver'">
+    </mat-form-field>
+  </form>
+
+  <!-- Tabla para mostrar los racks -->
+  <table class="rack-table" *ngIf="data.mode !== 'crear'">
+    <thead>
+    <tr>
+      <th>UUID</th>
+      <th>Tipo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rack of data.racks">
+      <td>{{ rack.uuid }}</td>
+      <td>{{ rack.type }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="dialog-buttons">
+  <button mat-raised-button color="primary" (click)="onClose(null)">Cerrar</button>
+  <button mat-raised-button color="primary" *ngIf="data.mode !== 'ver'" (click)="onClose(data.warehouse)">Guardar</button>
+</div>

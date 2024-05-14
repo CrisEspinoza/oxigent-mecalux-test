@@ -1,0 +1,53 @@
+.dialog-container {
+  padding: 20px;
+}
+
+.dialog-title {
+  margin-bottom: 20px;
+}
+
+.dialog-form {
+  width: 100%;
+}
+
+.dialog-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.dialog-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog-buttons button {
+  margin-left: 10px;
+}
+
+/* Estilos para la tabla de racks */
+.rack-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.rack-table th,
+.rack-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.rack-table th {
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+.rack-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.rack-table tbody tr:hover {
+  background-color: #f0f0f0;
+}

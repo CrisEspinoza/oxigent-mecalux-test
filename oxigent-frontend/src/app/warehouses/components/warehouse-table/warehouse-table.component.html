@@ -1,0 +1,41 @@
+<table class="warehouse-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Almacen</th>
+    <th>Tipo</th>
+    <th>Tamaño</th>
+    <th>Acciones</th>
+    <th>Fecha de Creación</th>
+    <th>Fecha de Actualización</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let warehouse of warehouses">
+    <td>{{ warehouse.id }}</td>
+    <td>{{ warehouse.client }}</td>
+    <td>{{ warehouse.uuid }}</td>
+    <td>{{ warehouse.family }}</td>
+    <td>{{ warehouse.size }}</td>
+    <td>{{ warehouse.startDate }}</td>
+    <td>{{ warehouse.updateDate }}</td>
+    <td>
+      <button mat-icon-button (click)="verDetalle(warehouse)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-icon-button (click)="editarDetalle(warehouse)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="eliminar(warehouse)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Botón para agregar un nuevo elemento -->
+<div class="add-button-container">
+  <button mat-raised-button color="primary" (click)="agregarNuevo()">Agregar Nuevo</button>
+</div>
