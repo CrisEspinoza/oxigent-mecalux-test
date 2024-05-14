@@ -10,8 +10,12 @@
     <mat-form-field class="dialog-form-field">
       <input matInput placeholder="Cliente" [(ngModel)]="data.warehouse.client" name="client" [readonly]="data.mode === 'ver'">
     </mat-form-field>
-    <mat-form-field class="dialog-form-field">
-      <input matInput placeholder="Tipo" [(ngModel)]="data.warehouse.family" name="family" [readonly]="data.mode === 'ver'">
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de Familia</mat-label>
+      <mat-select [(ngModel)]="data.warehouse.family" name="family" required [disabled]="data.mode === 'ver'">
+        <mat-option value="EST">EST</mat-option>
+        <mat-option value="ROB">ROB</mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field class="dialog-form-field">
       <input matInput placeholder="Tamaño" [(ngModel)]="data.warehouse.size" name="size" [readonly]="data.mode === 'ver'">

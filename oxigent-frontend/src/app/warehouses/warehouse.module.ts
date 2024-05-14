@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatOption} from "@angular/material/autocomplete";
+import {MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatOption,
+    MatSelect
   ],
   exports: [
     WarehouseTableComponent
