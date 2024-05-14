@@ -67,7 +67,7 @@ public class WarehouseService {
     @Transactional
     public void delete(Long id) {
         try {
-            Warehouses warehouse = warehouseRepository.findByIdWithRacks(id)
+            Warehouses warehouse = warehouseRepository.findById(id)
                     .orElseThrow(() -> new NotFoundException("Warehouse not found with id " + id));
 
             racksRepository.deleteAllByWarehouse(warehouse);

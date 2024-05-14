@@ -13,6 +13,4 @@ import java.util.Optional;
 public interface WarehouseRepository extends JpaRepository<Warehouses, Long> {
 
     Warehouses findByUuid(String uuid);
-    @Query("SELECT w FROM warehouses w JOIN w.racks WHERE w.id = :id")
-    Optional<Warehouses> findByIdWithRacks(Long id);
 }
